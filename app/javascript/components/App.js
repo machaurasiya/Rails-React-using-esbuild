@@ -1,11 +1,23 @@
 import React from "react";
+import { BrowserRouter, Link, Route, Router, Routes } from "react-router-dom";
+import Home from "./Home";
 import Users from "./Users";
+
 
 const App = () => {
   return(
     <>
-        <h1>Hello from react I am Manish</h1>
-        <Users/>
+      <BrowserRouter>
+        <nav className="p-4 bg-gray-200 flex gap-4">
+          <Link to="/">Home</Link>
+          <Link to="/users">Users</Link>
+        </nav>
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/users" element={<Users />} />
+        </Routes>
+      </BrowserRouter>
     </>
 )};
 

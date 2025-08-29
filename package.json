@@ -6,11 +6,12 @@
   },
   "scripts": {
     "build": "esbuild app/javascript/application.js --bundle --sourcemap --outfile=app/assets/builds/application.js --loader:.js=jsx --loader:.jsx=jsx",
-    "watch": "esbuild app/javascript/application.js --bundle --sourcemap --outfile=app/assets/builds/application.js --loader:.js=jsx --loader:.jsx=jsx --watch" 
+    "watch": "esbuild app/javascript/application.js --bundle --sourcemap --outfile=app/assets/builds/application.js --loader:.js=jsx --loader:.jsx=jsx --watch"
   },
   "dependencies": {
     "@hotwired/stimulus": "^3.2.2",
     "@hotwired/turbo-rails": "^8.0.16",
+    "axios": "^1.11.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router-dom": "^7.8.2"

@@ -3,16 +3,18 @@ import React, { useEffect, useState } from "react";
 function Users() {
   const [users, setUsers] = useState([]);
 
+  const url ="http://127.0.0.1:5000/api";
+
   useEffect(() => {
-    fetch("http://127.0.0.1:5000/users", {
+    fetch(`${url}/users`, {
         headers: {
             "Accept": "application/json"
         }
         })
-      .then((response) => response.json())   // 👈 convert to JSON
+      .then((response) => response.json())
       .then((data) => {
-        console.log("Fetched data:", data);  // Debug
-        setUsers(data);                      // 👈 set actual array
+        console.log("Fetched data:", data);
+        setUsers(data);
       })
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
@@ -22,7 +24,7 @@ function Users() {
       <h2>Users List</h2>
         <ul>
             {users.map((user) => (
-            <li key={user.id}>{user.name} | {user.email}  |  {user.age}</li>
+            <li key={user.id}>{user.name} | {user.email}  |  {user.age}   | {user.created_at}</li>
             ))}     
         </ul>
     </div>
