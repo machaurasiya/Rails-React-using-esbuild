@@ -57,7 +57,7 @@ jobs:
 
       - name: Set up DB
         run: |
-          bin/rails db:create db:migrate --trace
+          bundle exec rails db:create db:migrate --trace
 
       - name: Precompile assets (Rails + React build)
-        run: bin/rails assets:precompile
+        run: bundle exec rails assets:precompile
